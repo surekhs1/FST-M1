@@ -25,9 +25,9 @@ public class consumerTest {
         headers.put("Content-Type", "application/json");
         DslPart RequestResponseBody = new PactDslJsonBody()
                 .numberType("id", 345)
-                .stringType("firstName", "Ruchi")
-                .stringType("lastName", "Singh")
-                .stringType("email", "ruchi.r1@mail.com");
+                .stringType("firstName", "Surekha")
+                .stringType("lastName", "S")
+                .stringType("email", "ssurekha@mail.com");
         return builder.given("A request to create a user")
                 .uponReceiving("A request to create a user")
                 .path(createUser)
@@ -46,9 +46,9 @@ public class consumerTest {
         RequestSpecification rq = RestAssured.given().headers(headers).when();
         Map<String, Object> reqBody = new HashMap<>();
         reqBody.put("id", 345);
-        reqBody.put("firstName", "Ruchi");
-        reqBody.put("lastName", "Singh");
-        reqBody.put("email", "ruchi.r1@mail.com");
+        reqBody.put("firstName", "Surekha");
+        reqBody.put("lastName", "S");
+        reqBody.put("email", "ssurekha@mail.com");
         Response response = rq.body(reqBody).post(createUser);
         assert (response.getStatusCode() == 201);
 
